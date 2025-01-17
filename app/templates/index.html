@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Request Converter</title>
+  <link rel="stylesheet" href="static/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Python Request Converter</h1>
+    
+    <div class="input-section">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="curl">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 17l6-6-6-6"></path>
+            <path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"></path>
+          </svg>
+          cURL
+        </button>
+        <button class="tab-btn" data-tab="fetch">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 12h8"></path>
+            <path d="M12 8v8"></path>
+          </svg>
+          Fetch
+        </button>
+      </div>
+
+      <div class="editor-container">
+        <textarea id="input" placeholder="Paste your cURL command here..." spellcheck="false"></textarea>
+      </div>
+
+      <div class="conversion-options">
+        <label>
+          <input type="radio" name="library" value="requests" checked>
+          requests
+        </label>
+        <label>
+          <input type="radio" name="library" value="httpx">
+          httpx
+        </label>
+        <button id="convert-btn">
+          Convert to Python
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="output-section">
+      <div class="output-header">
+        <h3>Python Code</h3>
+        <button id="copy-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy Code
+        </button>
+      </div>
+      <pre><code class="language-python" id="output"></code></pre>
+    </div>
+  </div>
+
+  <script src="static/script.js"></script>
+</body>
+</html>

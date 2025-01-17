@@ -1,0 +1,252 @@
+:root {
+  --python-blue: #306998;
+  --python-yellow: #FFD43B;
+  --python-dark: #1F4B6B;
+  --background-color: #f5f7fa;
+  --text-color: #1a202c;
+  --shadow-color: rgba(48, 105, 152, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--python-blue);
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px var(--shadow-color);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--python-blue), var(--python-yellow));
+  border-radius: 2px;
+}
+
+.input-section, .output-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px var(--shadow-color),
+              0 -2px 6px rgba(48, 105, 152, 0.05);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(48, 105, 152, 0.1);
+}
+
+.input-section:hover, .output-section:hover {
+  box-shadow: 0 15px 40px var(--shadow-color),
+              0 -2px 8px rgba(48, 105, 152, 0.08);
+  transform: translateY(-2px);
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  background: var(--background-color);
+  border-radius: 12px;
+  box-shadow: inset 0 2px 4px rgba(48, 105, 152, 0.1);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: var(--python-dark);
+  box-shadow: 0 2px 4px rgba(48, 105, 152, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tab-btn:hover {
+  background: #f8fafc;
+  box-shadow: 0 4px 6px rgba(48, 105, 152, 0.15);
+}
+
+.tab-btn.active {
+  background: var(--python-blue);
+  color: white;
+  box-shadow: 0 4px 8px rgba(48, 105, 152, 0.3);
+}
+
+.editor-container {
+  margin-bottom: 1.5rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 1.25rem;
+  border: 2px solid rgba(48, 105, 152, 0.2);
+  border-radius: 12px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  resize: vertical;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(48, 105, 152, 0.1);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--python-blue);
+  box-shadow: 0 0 0 3px rgba(48, 105, 152, 0.2),
+              inset 0 2px 4px rgba(48, 105, 152, 0.1);
+}
+
+.conversion-options {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.25rem;
+  background: var(--background-color);
+  border-radius: 12px;
+  box-shadow: inset 0 2px 4px rgba(48, 105, 152, 0.1);
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: var(--python-dark);
+  background: white;
+  box-shadow: 0 2px 4px rgba(48, 105, 152, 0.1);
+}
+
+label:hover {
+  background: #f8fafc;
+  box-shadow: 0 4px 6px rgba(48, 105, 152, 0.15);
+}
+
+input[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--python-blue);
+}
+
+#convert-btn {
+  margin-left: auto;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, var(--python-blue), var(--python-dark));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(48, 105, 152, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#convert-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(48, 105, 152, 0.4);
+}
+
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.output-header h3 {
+  font-size: 1.25rem;
+  color: var(--python-blue);
+  font-weight: 600;
+}
+
+#copy-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--python-yellow);
+  color: var(--python-dark);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 8px rgba(255, 212, 59, 0.3);
+}
+
+#copy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 212, 59, 0.4);
+}
+
+pre {
+  background: #1F2937;
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+  border: 1px solid rgba(48, 105, 152, 0.1);
+}
+
+code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .conversion-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  #convert-btn {
+    margin-left: 0;
+  }
+  
+  .tabs {
+    flex-direction: column;
+  }
+}
